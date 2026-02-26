@@ -7,7 +7,7 @@ class Main {
   }
 
   init() {
-    //console.log('test');
+    //console.log('test'); good
     const chefs = document.querySelectorAll('[data-component="chef"]');
     for (let i = 0; i < chefs.length; i++) {
       const chef = chefs[i];
@@ -20,4 +20,3 @@ class Main {
 }
 
 new Main();
-// La ligne suivante devrait être au TOUT début du init() du Main
