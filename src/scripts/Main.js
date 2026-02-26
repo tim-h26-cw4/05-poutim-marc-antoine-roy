@@ -1,4 +1,5 @@
 import Icons from './utils/Icons.js';
+import Chef from './Chef.js';
 
 class Main {
   constructor() {
@@ -7,6 +8,12 @@ class Main {
 
   init() {
     //console.log('test');
+    const chefs = document.querySelectorAll('[data-component="chef"]');
+    for (let i = 0; i < chefs.length; i++) {
+      const chef = chefs[i];
+
+      new Chef(chef);
+    }
 
     Icons.load();
   }
