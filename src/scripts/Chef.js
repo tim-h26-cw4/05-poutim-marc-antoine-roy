@@ -4,7 +4,7 @@ export default class Chef {
   constructor(element) {
     this.element = element;
     this.menu = [];
-    this.container = document.querySelectorAll('.js-final-order');
+    this.container = this.element.querySelector('.js-final-order');
 
     this.init();
   }
@@ -20,25 +20,26 @@ export default class Chef {
       this.menu.push(instance);
     }
 
-    const button = document.querySelector('.js-button-order');
+    const button = this.element.querySelector('.js-button-order');
     button.addEventListener('click', this.sendOrder.bind(this));
   }
 
   sendOrder() {
+    this.container.innerText = '';
+
     let nbPoutine = 0;
 
     for (let i = 0; i < this.menu.length; i++) {
       const poutine = this.menu[i];
-      nbPoutine += 1;
 
-      if () {
-
+      if (poutine.isActive == true) {
+        nbPoutine += 1;
       }
     }
-    
+
     const menuText = document.createElement('p');
-    menuText.innerText = `Nombre total de poutine(s) : ${laskdjfa}`;
+    menuText.innerText = `Nombre total de poutine(s) : ${nbPoutine}`;
+    console.log(nbPoutine);
     this.container.appendChild(menuText);
-    this.container.innerText = '';
   }
 }

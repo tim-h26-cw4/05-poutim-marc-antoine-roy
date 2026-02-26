@@ -3,6 +3,7 @@ export default class Poutine {
     this.element = element;
     this.types = this.element.querySelectorAll('.js-button-poutine');
     this.selectedTypes = '';
+    this.isActive = false;
 
     this.init();
   }
@@ -27,6 +28,7 @@ export default class Poutine {
     }
 
     event.currentTarget.classList.add('is-active');
+    this.isActive = true;
     this.selectedTypes = event.currentTarget.innerText;
 
     addEventListener('click', this.updatePhoto.bind(this));
